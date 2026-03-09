@@ -82,6 +82,12 @@ public class AddressBook {
         return contacts.stream()
                 .collect(Collectors.groupingBy(c -> c.state,Collectors.counting()));
     }
+    public void sortByName(){
+
+        contacts.stream()
+                .sorted(Comparator.comparing(c -> c.firstName))
+                .forEach(System.out::println);
+    }
 
 
 }
