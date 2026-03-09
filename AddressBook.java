@@ -45,6 +45,19 @@ public class AddressBook {
                 .anyMatch(c -> c.firstName.equalsIgnoreCase(person.firstName)
                         && c.lastName.equalsIgnoreCase(person.lastName));
     }
+    public void searchByCity(String city){
+
+        contacts.stream()
+                .filter(c -> c.city.equalsIgnoreCase(city))
+                .forEach(System.out::println);
+    }
+
+    public void searchByState(String state){
+
+        contacts.stream()
+                .filter(c -> c.state.equalsIgnoreCase(state))
+                .forEach(System.out::println);
+    }
 
 
 }
