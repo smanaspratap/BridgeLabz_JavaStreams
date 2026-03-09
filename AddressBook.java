@@ -71,6 +71,17 @@ public class AddressBook {
         return contacts.stream()
                 .collect(Collectors.groupingBy(c -> c.state));
     }
+    public Map<String,Long> countByCity(){
+
+        return contacts.stream()
+                .collect(Collectors.groupingBy(c -> c.city,Collectors.counting()));
+    }
+
+    public Map<String,Long> countByState(){
+
+        return contacts.stream()
+                .collect(Collectors.groupingBy(c -> c.state,Collectors.counting()));
+    }
 
 
 }
