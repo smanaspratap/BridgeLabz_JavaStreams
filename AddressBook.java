@@ -8,6 +8,28 @@ public class AddressBook {
         contacts.add(person);
         System.out.println("Contact Added Successfully");
     }
+
+    public void editContact(String name, Scanner sc){
+
+        for(Contact c : contacts){
+
+            if(c.firstName.equalsIgnoreCase(name)){
+
+                System.out.println("Enter new city");
+                c.city = sc.next();
+
+                System.out.println("Enter new phone");
+                c.phone = sc.next();
+
+                System.out.println("Contact Updated");
+                return;
+            }
+        }
+
+        System.out.println("Contact Not Found");
+    }
+
+
 }
 
 
@@ -48,5 +70,7 @@ class AddressBookMain {
         Contact person = new Contact(first,last,address,city,state,zip,phone,email);
 
         book.addContact(person);
+
+
     }
 }
