@@ -88,6 +88,26 @@ public class AddressBook {
                 .sorted(Comparator.comparing(c -> c.firstName))
                 .forEach(System.out::println);
     }
+    public void sortByCity(){
+
+        contacts.stream()
+                .sorted(Comparator.comparing(c -> c.city))
+                .forEach(System.out::println);
+    }
+
+    public void sortByState(){
+
+        contacts.stream()
+                .sorted(Comparator.comparing(c -> c.state))
+                .forEach(System.out::println);
+    }
+
+    public void sortByZip(){
+
+        contacts.stream()
+                .sorted(Comparator.comparing(c -> c.zip))
+                .forEach(System.out::println);
+    }
 
 
 }
