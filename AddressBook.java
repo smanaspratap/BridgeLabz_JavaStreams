@@ -39,6 +39,12 @@ public class AddressBook {
 
         System.out.println("Contact Deleted");
     }
+    public boolean isDuplicate(Contact person){
+
+        return contacts.stream()
+                .anyMatch(c -> c.firstName.equalsIgnoreCase(person.firstName)
+                        && c.lastName.equalsIgnoreCase(person.lastName));
+    }
 
 
 }
