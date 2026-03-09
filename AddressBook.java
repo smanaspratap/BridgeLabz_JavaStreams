@@ -1,5 +1,7 @@
 import java.util.*;
 import java.util.Scanner;
+import java.util.stream.Collectors;
+
 public class AddressBook {
     //UC 5 is handeled using the below code line..
     List<Contact> contacts = new ArrayList<>();
@@ -57,6 +59,17 @@ public class AddressBook {
         contacts.stream()
                 .filter(c -> c.state.equalsIgnoreCase(state))
                 .forEach(System.out::println);
+    }
+    public Map<String,List<Contact>> groupByCity(){
+
+        return contacts.stream()
+                .collect(Collectors.groupingBy(c -> c.city));
+    }
+
+    public Map<String,List<Contact>> groupByState(){
+
+        return contacts.stream()
+                .collect(Collectors.groupingBy(c -> c.state));
     }
 
 
