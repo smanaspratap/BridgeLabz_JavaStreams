@@ -8,6 +8,11 @@ public class AddressBook {
         contacts.add(person);
         System.out.println("Contact Added Successfully");
     }
+    Map<String,AddressBook> addressBooks = new HashMap<>();
+
+    public void createAddressBook(String name){
+        addressBooks.put(name,new AddressBook());
+    }
 
     public void editContact(String name, Scanner sc){
 
